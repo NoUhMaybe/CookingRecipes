@@ -7,7 +7,7 @@ public abstract class Ingredients
 
     public static void ListIngredients()
     {
-        Console.WriteLine("Availble ingredients are:");
+        Console.WriteLine("Create a new cookie recipe! Availble ingredients are:");
         Console.WriteLine("1. Wheat Flour");
         Console.WriteLine("2. Coconut Flour");
         Console.WriteLine("3. Butter");

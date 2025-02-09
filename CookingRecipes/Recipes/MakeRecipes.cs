@@ -1,12 +1,7 @@
 ﻿
-public static class Recipes
+public static class Recipe
 {
-    public static void NoRecipes()
-    {
-        Console.WriteLine("Create a new cookie recipe!");
-    }
-
-    public static void AddRecipes()
+    public static List<Ingredients> Add()
     {
         List<Ingredients> newRecipe = new List<Ingredients>();
         Ingredients.ListIngredients();
@@ -47,6 +42,7 @@ public static class Recipes
 
         }
 
-        //Implement file writing and call method here
+        return newRecipe;
     }
+
 }
