@@ -4,6 +4,19 @@ public abstract class Ingredients
     public abstract int ID();
     public abstract string Name();
     public abstract string PreperationInstructions();
+
+    public static void ListIngredients()
+    {
+        Console.WriteLine("Availble ingredients are:");
+        Console.WriteLine("1. Wheat Flour");
+        Console.WriteLine("2. Coconut Flour");
+        Console.WriteLine("3. Butter");
+        Console.WriteLine("4. Chocolate");
+        Console.WriteLine("5. Sugar");
+        Console.WriteLine("6. Cardamom");
+        Console.WriteLine("7. Cinnamon");
+        Console.WriteLine("8. Cocoa Powder");
+    }
 }
 
 public class WheatFlour : Ingredients
