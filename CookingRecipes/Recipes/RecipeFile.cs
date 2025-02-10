@@ -27,7 +27,7 @@ public static class RecipeFile
                 default:
                     break;
             }
-        } while (userChoice != "1" || userChoice != "2");
+        } while (userChoice != "1" && userChoice != "2");
 
         //Check if file already exists
         if (CheckIfFileExists())
