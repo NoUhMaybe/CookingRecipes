@@ -37,7 +37,7 @@ public static class RecipeFile
             Console.WriteLine("Would you like to Overwrite (y/n): ");
             userChoice = Console.ReadLine();
             //If overwrite chosen delete current file
-            if (userChoice == "n" || userChoice.ToUpper() == "N")
+            if (userChoice == "y" || userChoice.ToUpper() == "Y")
             {
                 File.Delete(_filename);
             }
@@ -79,7 +79,7 @@ public static class RecipeFile
                 if (char.IsDigit(recipe[i]) && char.GetNumericValue(recipe[i]) > 0 && char.GetNumericValue(recipe[i]) < 9)
                 {
                     ingredient = (int)char.GetNumericValue(recipe[i]);
-                    switch (ingredient)
+                    switch (ingredient) //FIXME: Probably a more efficient way to do this
                     {
                         case 1: //Wheat Flour
                             name = "Wheat Flour";
