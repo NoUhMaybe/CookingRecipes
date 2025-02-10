@@ -63,7 +63,63 @@ public static class RecipeFile
 
     public static void OutputRecipeFormat()
     {
-        //Fixme: Display current recipes written in file
+        //Display current recipes written in file
+
+        //Get recipes from file
+        string[] recipes = File.ReadAllLines(_filename);
+
+        //Iterate for each recipe
+        int count = 1, ingredient;
+        string name = "", preperation = "";
+        foreach (string recipe in recipes)
+        {
+            Console.WriteLine($"--- Recipe #{count} ---");
+            for(int i = 0; i < recipe.Length; i++)
+            {
+                if (char.IsDigit(recipe[i]) && char.GetNumericValue(recipe[i]) > 0 && char.GetNumericValue(recipe[i]) < 9)
+                {
+                    ingredient = (int)char.GetNumericValue(recipe[i]);
+                    switch (ingredient)
+                    {
+                        case 1: //Wheat Flour
+                            name = "Wheat Flour";
+                            preperation = "Sieve. Add to other ingredients.";
+                            break;
+                        case 2: //Coconut Flour
+                            name = "Coconut Flour";
+                            preperation = "Sieve. Add to other ingredients.";
+                            break;
+                        case 3: //Butter
+                            name = "Butter";
+                            preperation = "Melt on low heat. Add to other ingredients.";
+                            break;
+                        case 4: //Chocolate
+                            name = "Chocolate";
+                            preperation = "Melt on low heat. Add to other ingredients.";
+                            break;
+                        case 5: //Sugar
+                            name = "Sugar";
+                            preperation = "Add to other ingredients.";
+                            break;
+                        case 6: //Cardamom
+                            name = "Cardamom";
+                            preperation = "Take half a teaspoon. Add to other ingredients.";
+                            break;
+                        case 7: //Cinnamon
+                            name = "Cinnamon";
+                            preperation = "Take half a teaspoon. Add to other ingredients.";
+                            break;
+                        case 8: //Cocoa Powder
+                            name = "Cocoa Powder";
+                            preperation = "Add to other ingredients.";
+                            break;
+                    }
+                    Console.WriteLine($"{name}. {preperation}");
+                }
+            }
+            Console.WriteLine(); //Starts a new line
+            count++;
+        }
 
     }
 
@@ -92,7 +148,7 @@ public static class RecipeFile
         //Testing output, to be commented out later
         //Console.WriteLine(output);
 
-        //FIXME: Figure out how to write 'output' to a file
+        //Write 'output' to a file
         File.AppendAllText(_filename, output);
     }
 

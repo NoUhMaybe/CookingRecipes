@@ -57,7 +57,7 @@ public class Sugar : Ingredients
 public class Cardamom : Ingredients
 {
     public override int ID() => 6;
-    public override string Name() => "Caramom";
+    public override string Name() => "Cardamom";
     public override string PreperationInstructions() => "Take half a teaspoon. Add to other ingredients.";
 }
 
